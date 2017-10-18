@@ -1,2 +1,13 @@
-# gh-src
-Programming test source codes
+# SysAdmin
+
+
+System management repository
+
+Linux Distro's
+
+Programming Exercises
+
+Sources codes 
+
+Notes
+
