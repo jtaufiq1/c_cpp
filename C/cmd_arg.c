@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // array test
 
 int main(int argc, char* argv[])
 {
 	int i, j, n;
-	for(i = 1; i = argc; i++)
+	for(i = 1; i < argc; i++)
 	{
 		for(j = 0, n = strlen(argv[i]); j < n; j++)
 		{

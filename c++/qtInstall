@@ -1,0 +1,3 @@
+# Install Qt library
+
+apt-get install build-essential libg11-mesa-dev
