@@ -1,3 +1,2 @@
-Fundamental C/C++ programming
+C sources code that I am practicing on them
 
-Learning repo: Basic C/C++ code
