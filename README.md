@@ -1,8 +1,3 @@
-Projects Source codes Repository
+Fundamental C/C++ programming
 
-Exercises and Test of Computer Prgramming and Scripting Languages written in ...
-
-C/C++
-Java
-Python
-   ....
+Learning repo: Basic C/C++ code
