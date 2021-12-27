@@ -18,7 +18,6 @@
 
 int main(void)
 {
-
 	char s[100];
 	int i, j, k, n;
 
@@ -26,11 +25,13 @@ int main(void)
 	printf("Enter Valid string : ");
 	scanf("%[^\n]c", &s);
 	
-	printf("%c", toupper(s[0]));
+//	printf("%c", toupper(s[0]));
 
 	// Loop for individual character of string
 	for(i = 0, n = strlen(s); i < n; i++)
 	{
+		if (i == 0) 
+			printf("%c", toupper(s[i]));
 		if(s[i] == ' ' && s[i+1] != '\0')
 		{
 			printf("%c", toupper(s[i + 1]));
@@ -38,6 +39,5 @@ int main(void)
 		}
 	}
 	printf("\n");
-	// exit();
 	return 0;
 }
