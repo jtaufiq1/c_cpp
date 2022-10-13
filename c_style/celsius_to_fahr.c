@@ -4,6 +4,8 @@
 #define LOWER_LIMIT 0.0		/* Lower Limit of Table */
 #define STEP_SIZE -6.7		/* Step Size */
 
+int to_fahr(float);		/* Celsius to Fahrenheit */
+
 // CELSIUS TO FAHRENHEIT TABLE
 // PROGRAM NAME: celsius_to_fahr.c
 // COMPILE: gcc -o celsius_to_fahr celsius_to_fahr.c  
@@ -23,9 +25,15 @@ int main(int argc, char **argv)
 
 	celsius = UPPER_LIMIT;
 	while(celsius >= LOWER_LIMIT) {
-		fahr = celsius * 1.8 + 32; 
+		fahr = to_fahr(celsius);
 		printf("%6.1f\t%3d\n", celsius, fahr);
 		celsius += STEP_SIZE;
 	}
 	return 0;
+}
+int to_fahr(float c)
+{
+	int fahr = 0;
+	fahr = c * 1.8 + 32; 
+	return fahr;
 }

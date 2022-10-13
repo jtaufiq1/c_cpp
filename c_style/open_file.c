@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 // Open file, Read Content of file
-
 int main(int argc, char **argv)
 {
 	unsigned char *file_name = argv[1];

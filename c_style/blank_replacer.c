@@ -15,12 +15,13 @@
  * 	of tab with \t, space with \b and backslash
  * 	with \\. Making it visible in the output of
  * 	the program.
+ * 
  * PROGRAM NAME:
  * 	blank_replacer.c
  * COMPILE:
  * 	gcc -o blank_replacer blank_replacer.c
  *
- * ALGO:
+ * ALGORITHM:
  * 	DEFINE Tab, Space, Backslash
  * 	GET INPUT from STDIN 
  * 	REPLACE Tab with \\t
@@ -46,6 +47,7 @@
  * 	END WHILE
  * 	PRINT OUTPUT
  */
+
 int main(int argc, char **argv)
 {
 	int c;

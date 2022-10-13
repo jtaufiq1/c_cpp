@@ -16,11 +16,9 @@
  */
 int main(int argc, char **argv)
 {
-	char c;
-	int nl, nw, nc, state;
-	
-	state = OUT;
+	int c, nl, nw, nc, state;
 	nl = nw = nc = 0;
+	state = OUT;
 	while( (c = getchar()) != EOF) {
 		++nc;
 		if( c == '\n')
@@ -32,6 +30,6 @@ int main(int argc, char **argv)
 			++nw;
 		}
 	}
-	printf("\t%d\t%d\t%d\n", nl, nw, nc);
+	printf("\t%d\t%d\t%d\n", nc, nw, nl);
 	return 0;
 }

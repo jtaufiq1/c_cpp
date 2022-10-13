@@ -18,8 +18,7 @@ int main(int argc, char **argv)
 		if( i % 10 == 0)
 			printf("\n");
 		else
-			//printf("%d: %c ", i, i);
-			printf("%d: %c ", 126, 126);
+			printf("%d: %c ", i, i);
 	}
 	return 0;
 }

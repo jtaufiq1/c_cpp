@@ -2,10 +2,8 @@
 
 /* Simple Program Print the value of EOF */
 
-int main(int argc, char **argv)
+int main()
 {
-	printf("EOF: %d\n", EOF);
-	printf("char: %c, EOF: %d\n", getchar(), EOF);
-
+	printf("EOF: %i\n", EOF);
 	return 0;
 }

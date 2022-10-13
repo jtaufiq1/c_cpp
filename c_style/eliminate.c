@@ -5,10 +5,8 @@
 
    By Taufiq Gh.
    
-
 email: jtaufiq1@gmail.com
-
-  */
+*/
 
 int main(int argc, char* argv[])
 {

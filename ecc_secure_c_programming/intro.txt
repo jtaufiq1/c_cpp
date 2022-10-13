@@ -1,0 +1,49 @@
+# EC COUNCIL SECURE PROGRAMMING
+Understanding how C code can be vulnerable to exploitation in 4 main sections
+- Background
+- Sample vulnerable code
+- Sample vulnerable code exploitation
+- Remediation
+Using hands-on exploration of exploitable vulnerabilities.
+
+## Improving C Application Security
+* Use built-in Library functions
+- Stored within header (.h) files within a compiler installation
+- Often optimized for speed execution
+- Built to achieve intended purpose
+- Less likely to have security errors
+- NOT ALL LIBRARY FUNCTIONS ARE SECURE !!
+
+* Use safe versions of library functions when available
+* Follow best practices style and guides
+* Use code linters and pay attention to compiler warnings
+- Compile Time Error
+- Runtime Errors
+- Little mistakes can cause big problems
+
+## Identifying Common Weaknesses
+* Understanding vulnerable code patterns can improve application security
+- Common cause of vulnerabilities include: Design flaws and Implementation errors
+- Many different vulnerability classes exist and many have multiple subclasses.
+- Some common vulnerabilities include Buffer overflows, Integer overflow/underflows etc.
+- Additional resources on vulnerabilities can be found online for further exploration
+
+* C is designed to be a very low-level programming language
+- It enables developers to have great deal of control over their code
+- Devs can manually optimize their code
+- But increased control decreases protection
+
+### Memory Allocation and The Stack
+* Variables: How data is stored in C. Has 3 types of variables
+- Global variables: Define outside the function and accessible to all functions.
+- Function arguments: Passed to the function by the function that calls it.
+- Local variables: Defined locally within a function.
+
+* The Stack: Chunk of contiguous memory addresses
+- Function arguments and local variables are stored on the program stack.
+- Space is allocated when the function is called.
+- Starts from higher memory addresses and shrinks to lower memory addresses
+- A variable may overflow into the space of the next
+
+* strcpy() - Unsafe C Library function (String Copy)
+* Buffer Overflows

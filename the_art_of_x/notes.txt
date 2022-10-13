@@ -1,0 +1,143 @@
+* Variables
+- int type can be declared unsigned (defaults to int)
+    Can be extended/shortened using long/short keyword
+- float type can be extended and shorted
+- Actual size is architecture depended
+- The macro sizeof can be used to determine the size of some types
+
+- Variable(s) with global scope persist across all function calls
+- Global variables are defined at the beginning of the code outside of any function.
+- Can be read/written to by any function and the changes persists between functions
+- Local variable overrides global & local variables with same name:wq
+
+- static keyword
+- static data_type variable_name [ = value ];
+- Initialized only onces and retains its value between function calls
+- Local to the context in which it is declared
+- stored in data segment of the processor
+
+* Pointers
+- Can be defined and used like any other variable types
+- Points to a data of a type
+- Defined by prepending an asterick (*) to the variable name
+- Stores the address of the data it points to; the ampersand (&) operator attached to the pointer variable returns the address stored in the pointer.
+- The address-of operator (&) used to get (address) of a pointer points to
+- Deference operator (*) used to get the actual data a pointer points to
+
+* Format strings
+- %d for decimals and %u for unsigned decimal and %x for hexadecimals
+- %s is used to print strings; address of the string is passed 
+- Minimum field width can be added right after the % sign of the format string
+- Adding a 0 after the % sign pads it with 0s
+
+* Typecasting
+- Temporally changing a variable datatype. The compiler treats the variable as if it were a new type
+- Format: (typecast_type) variable;
+- Typically used when dealing with integers and floating points variables
+
+* Command-Line Arguments
+- accessed in main() function; 2 args; an integer and a pointer to an array of strings
+- Integer contains the number of arguments
+- The 0th argument is always the program name and the rest are often argument vector (Strings)
+- Standard functions for converting char arrays containing numbers to actual integers
+
+* Memory Segmentation
+- A compiled program's memory is divided into 5 segments
+- Each segment represents a special portion set aside for a certain purpose
+- The segments are: text, data, bss, stack and heap
+    * Text/Code segment: stores the assembled machine instructions
+        - the execution of instructions is nonlinear in this segment
+        - High-level control structures compile into branch, jump and call instructions
+          in assembly.
+        - The (R|E)IP is set to the first instruction in this segment.
+        - The processor follows an execution loop. i.e:
+            1. Reads the instruction that the *IP is pointing to
+            2. Adds the byte length of the instruction to *IP
+            3. Executes the instruction that was read in step 1
+            4. Goes back to step 1
+        - Write permission is disabled in this segment (READ-ONLY)
+        - Allows sharing of code by different copies of the programming running
+        - Has a fixed size since it is read-only
+    * Data and bss Segment: stores global and static variables
+        - The data segment is filled with initialized global and static variables
+        - The bss segment is filled with uninitialized global and static variables
+        - Writable but has fixed size
+    * Heap Segment: A segment of memory a programmer can directly control.
+        - Blocks of memory can be allocated in this segment for any use
+        - The size is not fixed;
+        - it grows or shrinks depending on how much memory is reserved for use
+        - Reservations are managed by an allocator and deallocator algorithms
+        - The growth moves downwards towards higher memory addresses
+   * Stack Segment: Temporal scratch pad for storing local function variables.
+        - Variable in size; stores local function context during calls.
+        - The *BP register (Frame Pointer|Local Base (LB) Pointer)
+            - used to reference local function variables in the current stack frame 
+        - Stack frame:
+            - contains parameters to the function and local variables
+            - The Saved Frame Pointer (SFP) and the return address
+            - SFP restores *BP to its previous value
+            - The return address restores *IP to the next instruction after function
+        - The stack contains many stack frames with first-in-last-out ordering (FILO)
+        - Putting an item on the stack is known as pushing
+        - Removing an item from the stack is known as popping
+        - *SP register is used to keep track of the address of the end of the stack
+        - It grows upward in visual listing of memory, toward lower memory addresses.
+
+* Memory Segmentation in C
+- In compiled languages, compiled code goes into the text segment
+- Variables defined outside of any function and static variables are considered global
+- Initialized global variables go into the data segment and the rest goes into bss segment
+- Memory on the heap must must be allocated first using an allocater function
+- Pointers are used to reference memory on the heap
+- Function variables are stored on the stack.
+
+* File Access
+- Two ways to access files in C: Files descriptors and File streams
+- File descriptors use a set of low-level I/O functions and are more direct.
+- Filestreams are higher-level form of buffered I/O that is built on the lower-level functions. Easier to program with.
+- File descriptor is a number used to reference open files.
+- Function that use file descriptor are open(), close(), read() and write().
+- These functions return -1 if there's an error.
+    - Open(): opens file for reading and/or writing;
+        - Arguments: pointer to a file name, Access mode
+        - Returns a file descriptor
+    - The file descriptor is a unique integer value and is passed as an argument to the other functions (read,write&close).
+    - the read & write functions takes in addition to the file descriptor
+        - Number of bytes to read/write from the location.
+
+* File Permissions & Modes (CREATE|APPEND|WRITE-ONLY|READ-ONLY|READ-WRITE-ONLY...)
+- O_CREAT|O_APPEND|O_RDONLY|O_WRONLY|O_RDWR|...
+- USER: S_IRUSR|S_IWUSR|S_IWRUSR; GROUP: S_IRGRP|S_IWGRP|S_IWRGRP; OTHER: S_IROTH|S_IWOTH|S_IWROTH
+
+
+* Common Programming Errors (Exploitation)
+- Off-by-One Error: Miscount by one
+- Fencepost: Counting of items instead of space between them.
+- Improper unicode expansion
+- Memory corruption (Buffer overflow, format string exploits)
+  Allows arbitrary code execution, program crash or reprogram flow of execution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
