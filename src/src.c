@@ -30,3 +30,5 @@ int main(int argc, char **argv)
 	printf(", white space = %d, other = %d\n", nwhite, nother);
 	return 0;
 }
+
+// 1234567890

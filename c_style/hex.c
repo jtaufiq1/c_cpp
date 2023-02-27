@@ -4,7 +4,7 @@
 /** Print HEX
  *
  *
- */
+*/
 int main(int argc, char **argv)
 {
 	unsigned long t = 0;
